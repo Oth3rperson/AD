@@ -12,7 +12,6 @@ public class ejercicio4 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String text;
-		String viewText;
 		PrintWriter result = null;
 		try {
 			result = new PrintWriter("frases.txt");
@@ -33,8 +32,8 @@ public class ejercicio4 {
 					System.out.println(text);
 					text = bf.readLine();
 				}
+				bf.close();
 			}
-			
 		} catch (FileNotFoundException e) {
 			System.out.println(e.getMessage());
 		} catch (IOException e) {
