@@ -1,24 +1,28 @@
 package Ejercicio1;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class main {
 
-	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
-		File archive = new File("registroDeUsuario.txt");
+	public static void Main(String[] args){
 		Scanner sc = new Scanner(System.in);
 		String text;
 		PrintWriter result = null;
-		text = sc.nextLine();
-		while (!sc.equals("fin")) {
-			result.println(text);
+		try{
+			result = new PrintWriter("ejercicio1.txt");
+			System.out.println("introduce texto:");
 			text = sc.nextLine();
+			while (text.compareTo("fin") != 0) {
+				result.println(text);
+				text = sc.nextLine();
+			}
+			result.flush();
+		}catch(FileNotFoundException e){
+			System.out.println(e.getMessage());
 		}
 		result.close();
+		sc.close();
 	}
-
 }
