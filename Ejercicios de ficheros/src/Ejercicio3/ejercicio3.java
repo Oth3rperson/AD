@@ -4,45 +4,52 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class ejercicio3 {
 	public static void main(String[] args) {
         
         try {
-                FileReader fr1 = new FileReader("ejercicio1.txt");
-                FileReader fr2 = new FileReader("ejercicio2.txt");
+        	
+        	Scanner sc = new Scanner(System.in);
+        	System.out.println("Primer archivo: ");
+            FileReader fr1 = new FileReader(sc.nextLine());
+            System.out.println("Segundo archivo: ");
+            FileReader fr2 = new FileReader(sc.nextLine());
                 
-                BufferedReader bf1 = new BufferedReader(fr1);
-                BufferedReader bf2 = new BufferedReader(fr2);
+            BufferedReader bf1 = new BufferedReader(fr1);
+            BufferedReader bf2 = new BufferedReader(fr2);
                 
-                String sCadena1,sCadena2;
-                boolean iguales = true;         
+            String sCadena1,sCadena2;
+            boolean iguales = true;         
                 
-                sCadena1 = bf1.readLine();
-                sCadena2 = bf2.readLine();
+            sCadena1 = bf1.readLine();
+            sCadena2 = bf2.readLine();
                 
-                while ((sCadena1!=null) && (sCadena2!=null) && iguales) {
-                        
-                        if (!sCadena1.equals(sCadena2))
-                                iguales = false;
-                        
-                        sCadena1 = bf1.readLine();
-                        sCadena2 = bf2.readLine();
-                        
+            while ((sCadena1!=null) && (sCadena2!=null) && iguales) {
+            	
+                if (!sCadena1.equals(sCadena2)){
+                	iguales = false;
                 }
-                bf1.close();
-                bf2.close();
+                sCadena1 = bf1.readLine();
+                sCadena2 = bf2.readLine();    
+            }
+            while(iguales == false){
+            	
+            }
+            bf1.close();
+            bf2.close();
                 
-                if ((iguales) && (sCadena1==null) && (sCadena2==null))
-                        System.out.println("Los ficheros son iguales");
-                else
-                        System.out.println("Los ficheros son diferentes");
+            if ((iguales) && (sCadena1==null) && (sCadena2==null))
+                System.out.println("Los ficheros son iguales");
+            else
+                System.out.println("Los ficheros son diferentes");
                         
                  
-        } catch (FileNotFoundException fnfe){
-                fnfe.printStackTrace();
-        } catch (IOException ioe){
-                ioe.printStackTrace();
+        } catch (FileNotFoundException e){
+                e.getMessage();
+        } catch (IOException e){
+                e.getMessage();
         }
 	}
 }
