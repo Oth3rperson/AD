@@ -34,11 +34,9 @@ public class ejercicio3 {
                 sCadena1 = bf1.readLine();
                 sCadena2 = bf2.readLine();    
             }
-            while(iguales == false){
-            	
-            }
             bf1.close();
             bf2.close();
+            sc.close();
                 
             if ((iguales) && (sCadena1==null) && (sCadena2==null))
                 System.out.println("Los ficheros son iguales");
