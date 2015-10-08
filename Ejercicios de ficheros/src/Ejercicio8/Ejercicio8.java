@@ -37,6 +37,7 @@ public class Ejercicio8 {
                     contactos.getPoblacion();
                     contactos.getTelefono();
                     contactos.getfNacimiento();
+                    contactos.escribircontacto(contactos);
                     break;
                 case 2:
                 	contactos.agenda();

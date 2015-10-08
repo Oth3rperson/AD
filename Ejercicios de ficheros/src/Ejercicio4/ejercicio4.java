@@ -39,6 +39,6 @@ public class ejercicio4 {
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
-		
+
 	}
 }
